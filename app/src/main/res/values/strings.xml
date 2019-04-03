@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Workout Buddy</string>
+    <string name="db_filename">workoutbuddy.db</string>
+
+    <string name="table_name_exercises" translatable="false">exercises</string>
+    <string-array name="exercises_column_names">
+        <item>ID</item>
+        <item>name</item>
+        <item>muscle_group</item>
+        <item>picture</item>
+        <item>comments</item>
+    </string-array>
+
+    <string name="table_name_exercise_units" translatable="false">exercise_units</string>
+    <string-array name="exercise_units_column_names">
+        <item>ID</item>
+        <item>ID_exercise</item>
+        <item>first_rep</item>
+        <item>second_rep</item>
+        <item>third_rep</item>
+        <item>fourth_rep</item>
+        <item>comments</item>
+        <item>date</item>
+        <item>ID_routine</item>
+        <item>ID_musclegroup</item>
+    </string-array>
+
+
+    <string name="table_name_muscle_groups" translatable="false">muscle_groups</string>
+    <string-array name="muscle_groups_column_names">
+        <item>ID</item>
+        <item>name</item>
+    </string-array>
+
+    <string name="table_name_routines" translatable="false">routines</string>
+    <string-array name="routines_column_names">
+        <item>ID</item>
+        <item>name</item>
+        <item>day</item>
+        <item>exercise</item>
+        <item>series</item>
+        <item>repetitions</item>
+        <item>comments</item>
+
+
+    </string-array>
+
+
+</resources>

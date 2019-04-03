@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MuscleGroupManagerActivity">
+
+    <Spinner
+        android:id="@+id/spinnerMuscle"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnSaveMuscleGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="ADD NEW MUSCLE GROUP"
+        app:layout_constraintEnd_toEndOf="@+id/spinnerMuscle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/spinnerMuscle"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerMuscle" />
+
+    <Button
+        android:id="@+id/btnDeleteMuscleGroup"
+        android:layout_width="0dp"
+        android:layout_height="68dp"
+        android:enabled="false"
+        android:text="DELETE SELECTED MUSCLE GROUP"
+        app:layout_constraintEnd_toEndOf="@+id/btnSaveMuscleGroup"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnSaveMuscleGroup"
+        app:layout_constraintTop_toBottomOf="@+id/btnSaveMuscleGroup" />
+
+    <TextView
+        android:id="@+id/txtLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:text="Selected muscle group"
+        app:layout_constraintEnd_toEndOf="@+id/spinnerMuscle"
+        app:layout_constraintStart_toStartOf="@+id/spinnerMuscle"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>
