@@ -73,8 +73,9 @@ public class StoreExerciseActivity extends AppCompatActivity {
                                     ExerciseRow er = (ExerciseRow) spinnerExercise.getSelectedItem();
                                     // todo: insert proper routine exercise
                                     dh.insertExerciseUnit(er.getId(), repsPicker1.getValue(), repsPicker2.getValue(), repsPicker3.getValue(), repsPicker4.getValue(), editTextComments.getText().toString(), 0, er.getMuscleGroup_id());
-                                    Toast toast = Toast.makeText(context, "Unit was saved",Toast.LENGTH_LONG);
-                                    ((Activity)context).finish();
+                                    Utilities.longToast(context, "Unit was saved");
+                                    spinnerExercise.setSelection((spinnerExercise.getSelectedItemPosition()+1)%spinnerExercise.getCount());
+
                                 }
                                 break;
 
@@ -88,10 +89,17 @@ public class StoreExerciseActivity extends AppCompatActivity {
 
 
                 };
-
+                ExerciseRow er = (ExerciseRow) spinnerExercise.getSelectedItem();
                 AlertDialog.Builder builder2 = new AlertDialog.Builder(context);
-                builder2.setMessage("Save this exercise unit?").setPositiveButton("Yes", dialogClickListener)
-                        .setNegativeButton("No", dialogClickListener).show();
+                if (dh.selectLastExerciseUnit(er.getId())!=null) {
+
+                    builder2.setMessage("Save this exercise unit?").setPositiveButton("Yes", dialogClickListener)
+                            .setNegativeButton("No", dialogClickListener).show();
+
+                } else {
+                    builder2.setMessage("This exercise was already done today. Still want to save this exercise unit?").setPositiveButton("Yes", dialogClickListener)
+                            .setNegativeButton("No", dialogClickListener).show();
+                }
 
             }
         });
@@ -183,6 +191,7 @@ public class StoreExerciseActivity extends AppCompatActivity {
         });
     }
 
+    // if an exercise has been done for the day, add a check mark next to it
     private void populateExerciseSpinner() {
         // obtain id of selected muscle group
         MuscleGroupRow mgr = (MuscleGroupRow) spinnerMuscleGroup.getSelectedItem();
