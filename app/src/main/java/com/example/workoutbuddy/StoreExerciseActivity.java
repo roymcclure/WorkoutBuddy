@@ -73,7 +73,10 @@ public class StoreExerciseActivity extends AppCompatActivity {
                                     ExerciseRow er = (ExerciseRow) spinnerExercise.getSelectedItem();
                                     // todo: insert proper routine exercise
                                     dh.insertExerciseUnit(er.getId(), repsPicker1.getValue(), repsPicker2.getValue(), repsPicker3.getValue(), repsPicker4.getValue(), editTextComments.getText().toString(), 0, er.getMuscleGroup_id());
-                                    Utilities.longToast(context, "Unit was saved. Opening next exercise...");
+<<<<<<< HEAD
+=======
+                                    Utilities.longToast(context, "Unit was saved. Going to next exercise...");
+>>>>>>> next_Exercise
                                     spinnerExercise.setSelection((spinnerExercise.getSelectedItemPosition()+1)%spinnerExercise.getCount());
 
                                 }
