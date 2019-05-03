@@ -91,7 +91,7 @@ public class StoreExerciseActivity extends AppCompatActivity {
                 };
                 ExerciseRow er = (ExerciseRow) spinnerExercise.getSelectedItem();
                 AlertDialog.Builder builder2 = new AlertDialog.Builder(context);
-                if (dh.selectLastExerciseUnit(er.getId())!=null) {
+                if (dh.selectLastExerciseUnit(er.getId())==null) {
 
                     builder2.setMessage("Save this exercise unit?").setPositiveButton("Yes", dialogClickListener)
                             .setNegativeButton("No", dialogClickListener).show();
